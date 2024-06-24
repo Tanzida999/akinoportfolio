@@ -4,98 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Akino Group</title>
+    <style>
+        .carousel-item {
+            position: absolute;
+            width: 100%;
+            height: 90vh; /* Adjust height as needed */
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            position: relative;
+        }
+    </style>
 </head>
-
-
-<header class="">
+<body class="overflow-x-hidden">
+<header>
     <div class="navbar bg-white">
         <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Item 1</a></li>
+                    <li>
+                        <a>Parent</a>
+                        <ul class="p-2">
+                            <li><a>Submenu 1</a></li>
+                            <li><a>Submenu 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a>Item 3</a></li>
                 </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
-<div class="flex mt-2 pl-8">
-  <img src="images/transparent.png" class=" h-16 w-16" alt="">
-  <a class="btn btn-ghost text-4xl font-bold text-black pr-4">Akino Group</a>
-
-</div>          
+            </div>
+            <div class="flex mt-2 pl-8">
+                <img src="images/transparent.png" class="h-16 w-16" alt="">
+                <a class="btn btn-ghost text-4xl font-bold text-black pr-4">Akino Group</a>
+            </div>
         </div>
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li> <button onclick="play()" class="text-2xl font-medium text-black">About us</button></li>
-            <li>
-
-              <details>
-                <summary class="text-2xl font-medium text-black">Services</summary>
-                <ul class="p-2">
+            <ul class="menu menu-horizontal px-1">
+                <li><button onclick="play()" class="text-2xl font-medium text-black">About us</button></li>
+                <li>
                     <details>
-                    <summary class="text-2xl font-medium text-black">Bangladesh Services</summary>
-                  <li><a class="text-2xl">Export</a></li>
-                  <li><a class="text-2xl">Visa Processing</a></li>
-                </details>
-                 <details><summary class=" text-2xl">Japan Services</summary>
-                    <li><a class="text-2xl">Import</a></li>
-                  <li><a class="text-2xl">Food</a></li>
-                </details>
-                </ul>
-              </details>
-              
-            </li>
-            <li><a class="text-2xl font-medium text-black">Company</a></li>
-            <li><a class="text-2xl font-medium text-black">Address</a></li>
-          </ul>
+                        <summary class="text-2xl font-medium text-black">Services</summary>
+                        <ul class="p-2 z-50">
+                            <details>
+                                <summary class="text-2xl font-medium">Bangladesh Services</summary>
+                                <li><a class="text-2xl">Export</a></li>
+                                <li><a class="text-2xl">Visa Processing</a></li>
+                            </details>
+                            <details>
+                                <summary class="text-2xl">Japan Services</summary>
+                                <li><a class="text-2xl">Import</a></li>
+                                <li><a class="text-2xl">Food</a></li>
+                            </details>
+                        </ul>
+                    </details>
+                </li>
+                <li><a class="text-2xl font-medium text-black">Company</a></li>
+                <li><a class="text-2xl font-medium text-black">Address</a></li>
+            </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn text-2xl bg-transparent border-none font-medium text-black " >Contact</a>
+            <a class="btn text-2xl bg-transparent border-none font-medium text-black">Contact</a>
         </div>
-      </div>
-        
+    </div>
 </header>
-
-<body class="">
-    <section id="start" class="container flex justify-center items-center">
-        <div class="h-16 w-2/3">
-
-            <img src="images/cover.jpeg" alt="">
-
+<section id="start" class="relative h-75vh overflow-hidden">
+    <div class="carousel relative h-full w-full">
+        <div id="slide1" class="carousel-item active">
+            <img src="images/japan-buildings.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                
+            </div>
         </div>
-    </section>
-    <section id="aboutus" class="flex justify-center items-center hidden">
-        <p class="pl-12 pr-12 mt-8">
+        <div id="slide2" class="carousel-item">
+            <img src="images/japaqn-building4.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+               
+            </div>
+        </div>
+        <div id="slide3" class="carousel-item">
+            <img src="images/japan-building2.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                
+            </div>
+        </div>
+        <div id="slide4" class="carousel-item">
+            <img src="images/japan-building3.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section id="aboutus" class="flex justify-center items-center hidden">
+    <p class="pl-12 pr-12 mt-8">
+        Akino Group was founded by a team of dedicated individuals who have worked tirelessly to build this company from the ground up. Their relentless efforts and perseverance have shaped Akino Group into a trusted name in the industry. We offer a diverse range of services, including the import and export of high-quality skincare products and fashionable dresses. Additionally, we specialize in facilitating student placements in Japan, helping young minds achieve their academic goals through our well-established networks and comprehensive support systems.
 
-            Akino Group was founded by a team of dedicated individuals who have worked tirelessly to build this company from the ground up. Their relentless efforts and perseverance have shaped Akino Group into a trusted name in the industry. We offer a diverse range of services, including the import and export of high-quality skincare products and fashionable dresses. Additionally, we specialize in facilitating student placements in Japan, helping young minds achieve their academic goals through our well-established networks and comprehensive support systems.
-            
-            Our Japan-based operations also include the sale of halal food products, catering to a diverse clientele with a focus on quality and authenticity. We pride ourselves on adhering to the highest standards in all our offerings, ensuring that our products and services consistently exceed expectations.
-            
-            At Akino Group, we believe in continuous improvement and innovation, always seeking new ways to enhance our services and better serve our customers. Our commitment to excellence is unwavering, and we strive to build long-lasting relationships based on trust and mutual respect.
-            
-            Join us on our journey as we continue to grow and strive for excellence in all that we do. Stay with us and experience the dedication and passion that drives Akino Group. Together, we can achieve great things and create a brighter future for everyone involved.</p>
+        Our Japan-based operations also include the sale of halal food products, catering to a diverse clientele with a focus on quality and authenticity. We pride ourselves on adhering to the highest standards in all our offerings, ensuring that our products and services consistently exceed expectations.
 
-    </section>
-    
-    
-</body>
+        At Akino Group, we believe in continuous improvement and innovation, always seeking new ways to enhance our services and better serve our customers. Our commitment to excellence is unwavering, and we strive to build long-lasting relationships based on trust and mutual respect.
+
+        Join us on our journey as we continue to grow and strive for excellence in all that we do. Stay with us and experience the dedication and passion that drives Akino Group. Together, we can achieve great things and create a brighter future for everyone involved.
+    </p>
+</section>
 <footer>
-
 </footer>
 <script src="scripts/handlers.js"></script>
 <script src="scripts/utility.js"></script>
+<script>
+    const slides = document.querySelectorAll('.carousel-item');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+</script>
+</body>
 </html>
