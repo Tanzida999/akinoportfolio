@@ -19,6 +19,15 @@
             opacity: 1;
             position: relative;
         }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -62,8 +71,8 @@
                 <li><button onclick="play()" class="text-2xl font-medium text-black">About us</button></li>
                 <li>
                     <details>
-                        <summary class="text-2xl font-medium text-black bg-white">Services</summary>
-                        <ul class="p-2 z-50 bg-white text-black">
+                        <summary class="text-2xl font-medium text-black">Services</summary>
+                        <ul class="p-2 z-50">
                             <details>
                                 <summary class="text-2xl font-medium">Bangladesh Services</summary>
                                 <li><a class="text-2xl">Export</a></li>
@@ -90,26 +99,30 @@
     <div class="carousel relative h-full w-full">
         <div id="slide1" class="carousel-item active">
             <img src="images/japan-buildings.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                
+            <div class="text-overlay">
+                <h1 class="text-4xl font-bold">Welcome to Akino Group</h1>
+                <p class="text-xl mt-4">Your trusted partner in import and export</p>
             </div>
         </div>
         <div id="slide2" class="carousel-item">
             <img src="images/japaqn-building4.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-               
+            <div class="text-overlay">
+                <h1 class="text-4xl font-bold">Quality Services</h1>
+                <p class="text-xl mt-4">We offer the best services for our clients</p>
             </div>
         </div>
         <div id="slide3" class="carousel-item">
             <img src="images/japan-building2.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                
+            <div class="text-overlay">
+                <h1 class="text-4xl font-bold">Global Reach</h1>
+                <p class="text-xl mt-4">Connecting businesses worldwide</p>
             </div>
         </div>
         <div id="slide4" class="carousel-item">
             <img src="images/japan-building3.jpeg" class="w-full h-full object-cover" />
-            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                
+            <div class="text-overlay">
+                <h1 class="text-4xl font-bold">Innovative Solutions</h1>
+                <p class="text-xl mt-4">Leading the industry with innovation</p>
             </div>
         </div>
     </div>
