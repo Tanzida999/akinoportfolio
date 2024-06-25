@@ -1,6 +1,7 @@
 function play(){
     hideElementById('start');
-    showElementById('aboutus')
+    showElementById('aboutus');
+    
 
 }
 function  play2(){
