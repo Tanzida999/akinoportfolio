@@ -40,24 +40,31 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
                     </svg>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52">
-                    <li>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-white rounded-box w-52">
+                    <li><button onclick="play()" class="text-xl font-medium text-black hover:bg-slate-300">About us</button></li>
+                <li>
+                    <li style="position: relative;">
                         <details>
-                            <summary class="text-2xl font-medium text-black hover:bg-slate-300">Services</summary>
-                            <ul class="p-2 z-50">
+                            <summary class="text-xl font-medium text-black hover:bg-slate-300">Services</summary>
+                            <ul class="dropdown">
                                 <details>
-                                    <summary class="text-2xl font-medium hover:bg-slate-300">Bangladesh Services</summary>
-                                    <li><a class="text-2xl hover:bg-slate-300">Export</a></li>
-                                    <li><a class="text-2xl hover:bg-slate-300">Visa Processing</a></li>
+                                    <summary class="text-xl font-medium hover:bg-slate-300">Bangladesh Services</summary>
+                                    <ul>
+                                        <li><a class="text-xl hover:bg-slate-300">Export</a></li>
+                                        <li><a class="text-xl hover:bg-slate-300">Visa Processing</a></li>
+                                    </ul>
                                 </details>
                                 <details>
-                                    <summary class="text-2xl hover:bg-slate-300">Japan Services</summary>
-                                    <li><a class="text-2xl hover:bg-slate-300">Import</a></li>
-                                    <li><a class="text-2xl hover:bg-slate-300">Food</a></li>
+                                    <summary class="text-xl hover:bg-slate-300">Japan Services</summary>
+                                    <ul>
+                                        <li><a class="text-xl hover:bg-slate-300">Import</a></li>
+                                        <li><a class="text-xl hover:bg-slate-300">Food</a></li>
+                                    </ul>
                                 </details>
                             </ul>
                         </details>
                     </li>
+                    
                     <li><a>Item 3</a></li>
                 </ul>
             </div>
